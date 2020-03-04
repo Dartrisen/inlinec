@@ -7,7 +7,8 @@ from inspect import getfullargspec
 from tempfile import NamedTemporaryFile, mktemp
 
 try:
-    os.environ['CC'] = 'clang'
+    # if you're using the clang compiler
+    # os.environ['CC'] = 'clang'
     COMPILER = os.environ['CC']
 except KeyError:
     print('CC environment variable must point to C compiler', file=stderr)
