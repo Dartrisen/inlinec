@@ -26,6 +26,12 @@ print(factorial(10))
 # Output: 3628800
 ```
 
+# How does this work?
+
+The ``C`` class inserts C code directly into the Python files, which can then be dynamically linked and called via ctypes. 
+
+Note that all libraries given (they are assumed to be shared libraries) are also linked into the shared library, and thus loaded into the current program as well.
+
 # Limitations
 
 Note: This is just a proof of concept.
