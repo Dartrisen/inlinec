@@ -4,6 +4,7 @@ Simple inline C library for Python
 ## Usage
 
 You can simply use the C-style code inside of your Python functions. Just use C decorator and make sure you returned the string of C code.
+You will need pre-installed gcc/g++/clang compiler and correct path environment variable (for example CC='clang').
 
 ```python
 from inlinec import C
@@ -27,7 +28,9 @@ print(factorial(10))
 
 # Limitations
 
-Note: This is just a proof of concept. Please do not hesitate fork this project and make some changes.
+Note: This is just a proof of concept.
+
+**Please do not hesitate fork this project and make some changes.**
 
 1. Python function should have the same name as the C one.
 2. It is better to return only one C function from the Python def (in principle you could use more than one, but you need to be sure that your "main" C function has the same name as Python).
