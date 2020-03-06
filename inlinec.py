@@ -9,7 +9,7 @@ from ctypes import cdll, c_char, c_int, c_float, c_double, c_bool, c_short, c_lo
 
 
 try:
-    os.environ['CC'] = 'clang'
+    #os.environ['CC'] = 'clang'
     COMPILER = os.environ['CC']
 except KeyError:
     print('CC environment variable must point to C compiler', file=stderr)
