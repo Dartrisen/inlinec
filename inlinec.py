@@ -30,7 +30,6 @@ class C:
     def __call__(self, *args, **kwargs):
         name = self.func.__name__
         defaults = self.defaults or tuple()
-        self._typeparser()
         self.__getitem__(name).argtypes = self._typeparser()
         args = self._argconstructor(args, kwargs)
         if args == defaults:
