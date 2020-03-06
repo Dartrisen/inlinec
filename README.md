@@ -4,7 +4,7 @@ Simple inline C library for Python
 ## Usage
 
 You can simply use the C-style code inside of your Python functions. Just use C decorator and make sure you returned the string of C code.
-You will need pre-installed gcc/g++/clang compiler and correct path environment variable (for example CC='clang').
+You will need pre-installed gcc/g++/clang compiler and correct path environment variable (for example ``CC='clang'``).
 
 ```python
 from inlinec import C
