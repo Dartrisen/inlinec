@@ -44,6 +44,6 @@ Note: This is just a proof of concept.
 
 # To do
 1. add dictionary for all variable types (long long, unsigned short, etc)
-2. fix bug when you can define function ``def test(a=1, b=1.0, c=b'a'): pass`` and further call it ``test(x=1, y=1.0, z=b'a')`` with another set of parameters (but types should be the same)
+2. fix bug when you define function as ``def test(a=1, b=1.0, c=b'a'): pass`` and further call it ``test(x=1, y=1.0, z=b'a')`` with another set of parameters (but types should be the same)
 3. add tests
 4. fix ``_argconstructor`` (this one is works but probably not ideally)
