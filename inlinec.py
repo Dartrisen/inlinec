@@ -10,7 +10,7 @@ from consts import types, arg_pattern, res_pattern
 
 
 try:
-    os.environ['CC'] = 'clang'
+    #os.environ['CC'] = 'clang'
     COMPILER = os.environ['CC']
 except KeyError:
     print('CC environment variable must point to C compiler', file=stderr)
