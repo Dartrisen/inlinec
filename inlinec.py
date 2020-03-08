@@ -10,7 +10,7 @@ from consts import types, arg_pattern, res_pattern
 
 
 try:
-    #os.environ['CC'] = 'clang'
+    os.environ['CC'] = 'clang'
     COMPILER = os.environ['CC']
 except KeyError:
     print('CC environment variable must point to C compiler', file=stderr)
@@ -31,8 +31,10 @@ class C:
     def __call__(self, *args, **kwargs):
         name = self.func.__name__
         defaults = self.defaults or tuple()
+
         self.__getitem__(name).argtypes = self._argparser()
         self.__getitem__(name).restype = self._resparser()
+
         args = self._argconstructor(args, kwargs)
         if args == defaults:
             return self.__getitem__(name)(*args)
@@ -41,13 +43,17 @@ class C:
             return self.__getitem__(name)(*args)
 
     def _argparser(self):
-        string = self.func(self.args)
+        c_string = self.func(self.args)
+        string = self.parse_c_func(c_string)
+
         text = search(r'\((.*?)\)', string).group(1)
         text = findall(arg_pattern, text)
         return [types[type_] for type_ in text]
 
     def _resparser(self):
-        string = self.func(self.args)
+        c_string = self.func(self.args)
+        string = self.parse_c_func(c_string)
+
         text = search(res_pattern, string).group(1)
         return types[text]
 
@@ -55,6 +61,12 @@ class C:
         args = args or tuple()
         kwargs = tuple(kwargs.values()) or tuple()
         return args + kwargs
+
+    def parse_c_func(self, c_string):
+        name = self.func.__name__
+        pattern = res_pattern + f'{name}' + r'\((.*?)\)'
+        string = search(pattern, c_string).group(0)
+        return string
 
     def _compile(self, code, libs):
         with NamedTemporaryFile(mode='w', prefix='PYC', suffix='.c',
