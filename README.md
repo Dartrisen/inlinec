@@ -39,7 +39,6 @@ def factorial(n):
 
     void factorial(int n) {
         int res[MAX];
-        static int fac[MAX];
 
         res[0] = 1;
         int res_size = 1;
