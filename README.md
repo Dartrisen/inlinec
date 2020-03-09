@@ -98,3 +98,26 @@ Note that all libraries given (they are assumed to be shared libraries) are also
 - [ ] fix bug when you define function as ``def test(a=1, b=1.0, c=b'a'): pass`` and further call it ``test(x=1, y=1.0, z=b'a')`` with another set of parameters (but types should be the same)
 - [ ] add tests
 - [ ] fix ``_argconstructor`` (this one is works but probably not ideally)
+
+# Final Thoughts
+```python
+                 ▄▄▄▄▄
+        ▀▀▀██████▄▄▄       _______________
+      ▄▄▄▄▄  █████████▄  /                 \
+     ▀▀▀▀█████▌ ▀▐▄ ▀▐█ |   Gotta go fast!  |
+   ▀▀█████▄▄ ▀██████▄██ | _________________/
+   ▀▄▄▄▄▄  ▀▀█▄▀█════█▀ |/
+        ▀▀▀▄  ▀▀███ ▀       ▄▄
+     ▄███▀▀██▄████████▄ ▄▀▀▀▀▀▀█▌
+   ██▀▄▄▄██▀▄███▀ ▀▀████      ▄██
+▄▀▀▀▄██▄▀▀▌████▒▒▒▒▒▒███     ▌▄▄▀
+▌    ▐▀████▐███▒▒▒▒▒▐██▌
+▀▄▄▄▄▀   ▀▀████▒▒▒▒▄██▀
+          ▀▀█████████▀
+        ▄▄██▀██████▀█
+      ▄██▀     ▀▀▀  █
+     ▄█             ▐▌
+ ▄▄▄▄█▌              ▀█▄▄▄▄▀▀▄
+▌     ▐                ▀▀▄▄▄▀
+ ▀▀▄▄▀
+ ```
