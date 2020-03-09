@@ -12,7 +12,7 @@ from inlinec import C
 
 @C
 def factorial(x):
-    return ('''
+    return ("""
     int factorial(int x) {
         int result = 1;
         while (x > 1) {
@@ -21,7 +21,7 @@ def factorial(x):
         }
     return result;
     }
-''')
+""")
 
 print(factorial(10))
 # Output: 3628800
@@ -71,8 +71,8 @@ def factorial(n):
     }
 """)
 
-factorial(100)
-# Output: 93326215443944152681699238856266700490715968264381621468592963895217599993229915608941463976156518286253697920827223758251185210916864000000000000000000000000
+factorial(10)
+# Output: 3628800
 ```
 
 # How does this work?
