@@ -89,7 +89,7 @@ Note that all libraries given (they are assumed to be shared libraries) are also
 
 1. Python function should have the same name as the C one.
 2. It is better to return only one C function from the Python def.
-> In principle you could use more than one (see Example 2), but you need to specify which function you would like to link with the Python.
+> In principle you could use more than one (see Example 2), but you need to specify which function you would like to link with the Python one.
 3. Many more.
 
 # To do
