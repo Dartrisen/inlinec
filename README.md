@@ -83,16 +83,19 @@ Note that all libraries given (they are assumed to be shared libraries) are also
 
 # Limitations
 
-Note: This is just a proof of concept.
+*Note: This is just a proof of concept.*
 
 **Please do not hesitate fork this project and make some changes.**
 
 1. Python function should have the same name as the C one.
-2. It is better to return only one C function from the Python def (in principle you could use more than one, but you need to be sure that your "main" C function has the same name as Python).
+2. It is better to return only one C function from the Python def.
+> In principle you could use more than one (see Example 2), but you need to specify which function you would like to link with the Python.
 3. Many more.
 
 # To do
-1. add dictionary for all variable types (long long, unsigned short, etc)
-2. fix bug when you define function as ``def test(a=1, b=1.0, c=b'a'): pass`` and further call it ``test(x=1, y=1.0, z=b'a')`` with another set of parameters (but types should be the same)
-3. add tests
-4. fix ``_argconstructor`` (this one is works but probably not ideally)
+- [x] fix argtypes
+- [x] fix restypes
+- [ ] add dictionary for all variable types (long long, unsigned short, pointers, etc)
+- [ ] fix bug when you define function as ``def test(a=1, b=1.0, c=b'a'): pass`` and further call it ``test(x=1, y=1.0, z=b'a')`` with another set of parameters (but types should be the same)
+- [ ] add tests
+- [ ] fix ``_argconstructor`` (this one is works but probably not ideally)
